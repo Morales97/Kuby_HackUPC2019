@@ -30,6 +30,13 @@ const Icon = ({ name }) => {
         style={{ width: 25, height: 25 }}
       />
     );
+  } else if (name === 'pin') {
+    return (
+      <Image
+        source={require('../images/icons/pin.png')}
+        style={{ width: 15, height: 25 }}
+      />
+    );
   }
 };
 

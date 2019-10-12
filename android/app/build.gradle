@@ -1,5 +1,6 @@
 apply plugin: "com.android.application"
 
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 import com.android.build.OutputFile
 
 /**
@@ -133,7 +134,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        defaultConfig { manifestPlaceholders = [ GOOGLE_API_KEY:"AIzaSyDSrxdApvuJ2yg6IsJpJM-U1H--hTWwJck" ] }
+        defaultConfig { manifestPlaceholders = [ GOOGLE_MAPS_API_KEY:project.env.get("GOOGLE_MAPS_API_KEY") ] }
     }
     splits {
         abi {

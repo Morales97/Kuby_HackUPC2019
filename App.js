@@ -13,12 +13,15 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 // Local imports
 import HomeScreen from "./screens/HomeScreen";
+import SearchScreen from "./screens/SearchScreen";
+import UploadScreen from "./screens/UploadScreen";
 import UserScreen from "./screens/UserScreen";
-
 
 const AppNavigator = createBottomTabNavigator(
   {
     Home: HomeScreen,
+    Search: SearchScreen,
+    Upload: UploadScreen,
     User: UserScreen,
   },
   {

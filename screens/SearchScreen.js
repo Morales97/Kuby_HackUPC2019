@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Link } from 'react-native';
+
 
 class SearchScreen extends React.Component {
   render() {

@@ -6,6 +6,7 @@
  * @flow
  */
 
+
 import React from 'react';
 import { View, Text } from 'react-native';
 import { createAppContainer } from 'react-navigation';
@@ -70,5 +71,5 @@ const AppNavigator = createBottomTabNavigator(
   }
 );
 
-export default createAppContainer(AppNavigator);
 
+export default createAppContainer(AppNavigator);

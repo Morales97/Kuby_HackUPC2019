@@ -133,6 +133,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        defaultConfig { manifestPlaceholders = [ GOOGLE_API_KEY:"AIzaSyDSrxdApvuJ2yg6IsJpJM-U1H--hTWwJck" ] }
     }
     splits {
         abi {

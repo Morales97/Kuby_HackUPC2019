@@ -1,28 +1,46 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Button, Text, View, TouchableOpacity, FlatList} from 'react-native';
+import {Platform, StyleSheet, Button, Text, View, TouchableOpacity, FlatList, ActivityIndicator} from 'react-native';
 import MapView, {Callout, PROVIDER_GOOGLE} from 'react-native-maps';
 import Icon from "Kuby/components/Icon";
-
 
 
 class MapScreen extends React.Component {
 
   render() {
+
     var data = [
       {
-        key: "caca",
-        lat: 41.39,
-        lon: 2.11,
-        name: 'Foo Place'
+        key: "5da26ac42e27b1664374f285",
+        lat: 41.403899,
+        lon: 2.173844,
+        name: 'Sagrada Família'
       },
       {
-        key: "fdf",
-        lat: 41.38,
-        lon: 2.11,
-        name: 'Foo Place 2',
+        key: "5da26b0ac0c0c266569b177a",
+        lat: 41.386964,
+        lon: 2.17007,
+        name: 'Plaça Catalunya',
+      },
+      {
+        key: "5da26b0ac0c0c266569b177a",
+        lat: 41.388489,
+        lon: 2.112031,
+        name: 'UPC',
+      },
+      {
+        key: "5da26b0ac0c0c266569b177a",
+        lat: 41.413629,
+        lon: 2.152936,
+        name: 'Parc Güell',
+      },
+      {
+        key: "5da26b0ac0c0c266569b177a",
+        lat: 41.389638,
+        lon: 2.152664,
+        name: 'Hospital Clínic',
       }
-    ]
-//sha d’iterar per cada location de la response guardada a this.state.data.body!!
+    ];
+
     return (
       <MapView
         style={{flex: 1}}
@@ -35,17 +53,15 @@ class MapScreen extends React.Component {
           longitudeDelta: 0.0421,
         }}>
 
-
           {data.map(marker => (
             <MapView.Marker
               coordinate={{latitude: marker.lat, longitude: marker.lon}}
               title={marker.name}
             >
-              
               <Callout>
                 <TouchableOpacity onPress={this.onOpenDetails}>
-                  <Text>Aquí hi ha una altra cafeteria'</Text>
-                  <Text>descriptio</Text>
+                  <Text>{marker.name}</Text>
+                  <Text>*description*</Text>
                   <Button
                     title="Open details"
                   />
@@ -55,30 +71,6 @@ class MapScreen extends React.Component {
             )
           )}
 
-
-
-        {/*<MapView.Marker
-          coordinate={{latitude: 41.3918313, longitude: 2.1155701}}
-          //title={'Aquí hi ha una cafeteria'}
-          title={this.state.data.body}
-          description={'description'}
-        />
-        <MapView.Marker
-          coordinate={{latitude: 41.3718313, longitude: 2.1255701}}
-          title={'Aquí hi ha una altra cafeteria'}
-          description={'description'}
-        >
-          <View><Text>TODO: Poner icono</Text></View>
-          <Callout>
-            <TouchableOpacity onPress={this.onOpenDetails}>
-              <Text>Aquí hi ha una altra cafeteria'</Text>
-              <Text>descriptio</Text>
-              <Button
-                title="Open details"
-              />
-            </TouchableOpacity>
-          </Callout>
-        </MapView.Marker>*/}
       </MapView>
     );
   }

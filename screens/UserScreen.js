@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, 
+import { View, Text, StyleSheet, TextInput,
   TouchableOpacity, AsyncStorage, Keyboard } from 'react-native';
   import {Actions} from 'react-native-router-flux';
 
@@ -57,7 +57,7 @@ class UserScreen extends React.Component {
    render() {
        return(
            <View style={styles.container}>
-               <Text style={styles.welcomeText}>Welcome to Kuby!</Text>
+               <Text style={styles.welcomeText}>Welcome to Kuby</Text>
                <TextInput style={styles.inputBox}
                onChangeText={(email) => this.setState({email})}
                underlineColorAndroid='rgba(0,0,0,0)'
@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
        flex: 1,
        justifyContent: 'center',
        alignItems: 'center',
+       backgroundColor: '#f5efdf',
    },
    inputBox: {
        width: 300,
@@ -112,6 +113,7 @@ const styles = StyleSheet.create({
    welcomeText: {
        fontWeight: 'bold',
        fontSize: 25,
+       textAlign: 'center'
    }
 })
 

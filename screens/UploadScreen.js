@@ -18,7 +18,8 @@ class UploadScreen extends React.Component {
             top: 50,
             textAlign: 'center',
             color: 'black',
-            fontSize: 30}}> Upload your book! </Text>
+            fontSize: 25,
+            fontWeight: 'bold'}}> Upload your book! </Text>
           <TextInput
             style={{height: 60, left: 30, width: 340, backgroundColor: '#f2e4bd'}}
             placeholder="ISBN"
@@ -59,6 +60,8 @@ class UploadScreen extends React.Component {
 
     );
   }
+
 }
+
 
 export default UploadScreen;

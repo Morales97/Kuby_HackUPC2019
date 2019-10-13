@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Link, FlatList, ActivityIndicator } from 'react-native';
+import { View, Text, Link, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
 
 
 class SearchScreen extends React.Component {

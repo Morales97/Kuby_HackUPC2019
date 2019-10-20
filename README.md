@@ -16,7 +16,7 @@ $ cd node_modules/react-native-maps/lib/android
 $ nano build.gradle  --> insert line 20: def supportLibVersion = safeExtGet('supportLibVersion', '28.0.0')
 
 
-Run:
+## Run:
 --- Instruccions per executar l'app Kuby ---
 
 ** SERVER **

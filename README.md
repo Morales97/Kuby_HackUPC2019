@@ -1,12 +1,18 @@
 # Kuby
 
-Initialization:
+## Initialization:
 $ git clone "url"
+
 $ npm install
+
 Copy Google Maps key into .env:
+
 Create .env file (or cp .env.test .env) and write line:
+
 GOOGLE_MAPS_API_KEY="your key"
+
 $ cd node_modules/react-native-maps/lib/android
+
 $ nano build.gradle  --> insert line 20: def supportLibVersion = safeExtGet('supportLibVersion', '28.0.0')
 
 

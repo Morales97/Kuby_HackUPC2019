@@ -24,7 +24,7 @@ import Icon from "./components/Icon";
 const AppNavigator = createBottomTabNavigator(
   {
     Map: {
-        screen: MapFakeScreen,
+        screen: MapScreen,
         navigationOptions: {
           tabBarIcon: ({ tintColor }) => (
             <Icon name="map" size={20}/>
@@ -32,10 +32,18 @@ const AppNavigator = createBottomTabNavigator(
         },
     },
     Search: {
-        screen: ListBooksScreen,
+        screen: SearchScreen,
         navigationOptions: {
           tabBarIcon: ({ tintColor }) => (
             <Icon name="search" size={20}/>
+          )
+        },
+    },
+    List: {
+        screen: ListBooksScreen,
+        navigationOptions: {
+          tabBarIcon: ({ tintColor }) => (
+            <Icon name="list" size={20}/>
           )
         },
     },

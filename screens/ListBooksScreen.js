@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Link, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, Text, Link, FlatList, ActivityIndicator, TouchableOpacity, StyleSheet } from 'react-native';
 
 
 class ListBooksScreen extends React.Component {
@@ -9,7 +9,7 @@ class ListBooksScreen extends React.Component {
     this.state ={ isLoading: true}
   }
 
-  componentDidMount(){
+  getBooks(){
     return fetch('http://192.168.1.34:3000/books')
       .then((response) => response.json())
       .then((responseJson) => {
@@ -24,6 +24,10 @@ class ListBooksScreen extends React.Component {
       });
   }
 
+  componentDidMount(){
+    this.getBooks();
+  }
+
   render(){
     if(this.state.isLoading){
       return(
@@ -34,12 +38,22 @@ class ListBooksScreen extends React.Component {
     }
 
     return(
-      <View style={{flex: 1, paddingTop:20, backgroundColor: '#f5efdf'}}>
+      <View style={{flex: 2, paddingTop:80, backgroundColor: '#f5efdf'}}>
+
+        <TouchableOpacity
+          style={{alignSelf: 'center', position: 'absolute', marginTop: 30}}
+          onPress={() => {
+            this.getBooks();
+          }}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'blue'}}> Click to refresh </Text>
+        </TouchableOpacity>
+
         <FlatList
           data={this.state.dataSource}
           renderItem={({item}) => <Text style={{fontSize: 15, marginTop: 5}}>{item.title}, {item.author}</Text>}
           keyExtractor={({id}, index) => id}
         />
+        
       </View>
     );
   }

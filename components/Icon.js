@@ -37,6 +37,13 @@ const Icon = ({ name }) => {
         style={{ width: 15, height: 25 }}
       />
     );
+  } else if (name === 'list') {
+    return (
+      <Image
+        source={require('../images/icons/list.png')}
+        style={{ width: 15, height: 25 }}
+      />
+    );
   }
 };
 

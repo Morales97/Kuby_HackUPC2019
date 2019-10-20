@@ -14,7 +14,9 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 // Local imports
 import MapScreen from "./screens/MapScreen";
+import MapFakeScreen from "./screens/MapFakeScreen";
 import SearchScreen from "./screens/SearchScreen";
+import ListBooksScreen from "./screens/ListBooksScreen";
 import UploadScreen from "./screens/UploadScreen";
 import UserScreen from "./screens/UserScreen";
 import Icon from "./components/Icon";
@@ -22,7 +24,7 @@ import Icon from "./components/Icon";
 const AppNavigator = createBottomTabNavigator(
   {
     Map: {
-        screen: MapScreen,
+        screen: MapFakeScreen,
         navigationOptions: {
           tabBarIcon: ({ tintColor }) => (
             <Icon name="map" size={20}/>
@@ -30,7 +32,7 @@ const AppNavigator = createBottomTabNavigator(
         },
     },
     Search: {
-        screen: SearchScreen,
+        screen: ListBooksScreen,
         navigationOptions: {
           tabBarIcon: ({ tintColor }) => (
             <Icon name="search" size={20}/>

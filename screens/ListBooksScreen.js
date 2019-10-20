@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Link, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
 
 
-class SearchScreen extends React.Component {
+class ListBooksScreen extends React.Component {
 
   constructor(props){
     super(props);
@@ -45,4 +45,4 @@ class SearchScreen extends React.Component {
   }
 }
 
-export default SearchScreen;
+export default ListBooksScreen;

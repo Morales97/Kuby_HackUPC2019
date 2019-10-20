@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Link, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
 
 
-class SearchScreen extends React.Component {
+class MapFakeScreen extends React.Component {
 
   constructor(props){
     super(props);
@@ -10,7 +10,7 @@ class SearchScreen extends React.Component {
   }
 
   componentDidMount(){
-    return fetch('http://192.168.1.34:3000/books')
+    return fetch('http://192.168.1.34:3000/locations')
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
@@ -37,7 +37,9 @@ class SearchScreen extends React.Component {
       <View style={{flex: 1, paddingTop:20, backgroundColor: '#f5efdf'}}>
         <FlatList
           data={this.state.dataSource}
-          renderItem={({item}) => <Text style={{fontSize: 15, marginTop: 5}}>{item.title}, {item.author}</Text>}
+          renderItem={({item}) =>
+              <Text style={{fontSize: 15, marginTop: 5}}>{item.name} lat: {item.lat} lon: {item.lon} </Text>
+          }
           keyExtractor={({id}, index) => id}
         />
       </View>
@@ -45,4 +47,5 @@ class SearchScreen extends React.Component {
   }
 }
 
-export default SearchScreen;
+
+export default MapFakeScreen;
